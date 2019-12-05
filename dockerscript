@@ -2,14 +2,14 @@
 sudo apt-get update
 sudo apt-get install docker-engine -y
 sudo service docker-start
-docker login registry.aquasec.com
+docker login abc
 echo "$DOCKER_HUB_PWD" | docker login --username="$DOCKER_HUB_UNAME" --password-stdin
-docker pull registry.aquasec.com/cc-premium:latest
-docker tag registry.aquasec.com/cc-premium:latest registry.sfgitlab.opr.statefarm.org/appsec-scanning-examples/aquasecurity-repo/cybercenter:latest
-docker logout registry.aquasec.com
-docker login registry.sfgitlab.opr.statefarm.org
+docker pull abc/image:latest
+docker tag abc/abc:latest xyz/example/aquasecurity-repo/cybercenter:latest
+docker logout abc
+docker login xyz
 echo "$DOCKER_HUB_PWD" | docker login --username="$DOCKER_HUB_UNAME" --password-stdin
-docker push registry.sfgitlab.opr.statefarm.org/appsec-scanning-examples/aquasecurity-repo/cybercenter:latest
+docker push xyz/example/aquasecurity-repo/cybercenter:latest
 
 
 $ echo "secret" > /root/configs/password.txt
